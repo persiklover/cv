@@ -1,0 +1,376 @@
+@import "./fonts";
+@import "./mixins";
+
+@import url(./reset.css);
+
+html {
+  --outline-width: .4rem;
+
+  font-size: .520834vw;
+  
+  @include sm {
+    font-size: 1.26595vw;
+  }
+}
+
+body {
+  position: relative;
+
+  font-family: "Hack", monospace;
+  font-size: 1.8rem;
+  line-height: 1.25em;
+  letter-spacing: .01em;
+
+  margin: 1.25em;
+
+  @media print {
+    font-size: 2.6rem;
+  }
+}
+
+.me {
+  display: inline-flex;
+  margin-top: 1em;
+  margin-left: 4.5em;
+  height: 15ch;
+  // border-radius: 50%;
+
+  @media print {
+    // margin: 0;
+    // position: absolute;
+    // left:  0;
+    // top:   0;
+    height: 13.5ch;
+  }
+}
+
+.intro {
+
+  strong {
+    font-size: 1.075em;
+  }
+
+  .important {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+
+    font-family: "Courier Prime Code", monospace;
+    font-weight: normal;
+  }
+
+  @media print {
+    // margin-bottom: 3.25rem;
+    // margin-left: 8.5rem;
+  }
+}
+
+.github {
+  display: inline-flex;
+  align-items: center;
+  box-shadow: none;
+
+  &:hover,
+  &:focus {
+    box-shadow: none;
+
+    fill: #007bc1;
+  }
+
+  svg {
+    height: 2.4ch;
+    line-height: 1.5;
+    margin-top: -.1em;
+    margin-inline-end: .5em;
+  }
+}
+
+kbd {
+  background-color: #eee;
+  display: inline-block;
+  border-radius: .25em;
+  padding: .3em .5em;
+  
+  font-family: inherit;
+  font-size: .85em;
+  color: #333;
+  font-weight: 700;
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+p {
+  margin-bottom: .4em;
+}
+
+address {
+  font-style: normal;
+
+  p {
+    margin-top: .5em;
+    margin-bottom: .1em;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+}
+
+button[aria-expanded] {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+
+  color: inherit;
+
+  box-shadow: 0 var(--outline-width) 0 0 rgb(0 0 0 / 25%);
+
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+    border-radius: var(--outline-width);
+    box-shadow: 0 0 0 var(--outline-width) rgb(0 0 0 / 55%);
+  }
+
+  &::after {
+    content: " ↓";
+  }
+
+  @media print {
+    display: none;
+
+    + * {
+      display: block;
+    }
+  }
+
+  &[aria-expanded="true"] {
+    margin-bottom: .5em;
+
+    &::after {
+      content: " ↑";
+    }
+  }
+  
+}
+
+.collapsible {
+
+  @media print {
+    display: block;
+  }
+
+  ul {
+    margin-bottom: .4em;
+  }
+
+  p {
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Courier Prime Code", monospace;
+}
+
+h1 {
+  margin-top:    .25em;
+  margin-bottom: .25em;
+
+  font-size: 2.25em;
+}
+
+h2,
+h3,
+h4 {
+  margin: 1em 0 .35em;
+}
+
+h4 {
+  margin-bottom: 0.4em;
+
+  font-size: 1.35em;
+}
+
+h3 {
+  font-size: .9em;
+  font-weight: normal;
+
+  strong {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  &::before {
+    // content: ">";
+    // display: block;
+    // margin-left: -.6em;
+  }
+}
+
+h3,
+h4 {
+  + small {
+    display: block;
+    margin-top:   -.4em;
+    margin-bottom: .5em;
+  }
+}
+
+ul {
+  margin: 0;
+  // margin-top: -.25em;
+  padding-left: 2.75em;
+  list-style: "→ ";
+
+  &.timeline {
+    list-style: none;
+    padding: 0;
+  }
+
+  &.inline {
+    padding: 0;
+    // margin: 0;
+    display: flex;
+    list-style: none;
+
+    > * + * {
+      margin-left: .75ch;
+    }
+
+    li::after {
+      content: ",";
+    }
+  }
+
+  &.two-columns {
+    // background: pink;
+    // width: 33em;
+    // column-count: 2;
+    // column-
+  }
+}
+
+a {
+  box-shadow: 0 var(--outline-width) 0 0 rgb(0 123 193 / 25%);
+  color: #007bc1;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: 0 var(--outline-width) 0 0 rgb(0 123 193 / 75%);
+  }
+
+  &:focus {
+    outline: 0;
+    border-radius: var(--outline-width);
+    box-shadow: 0 0 0 var(--outline-width) rgb(0 123 193 / 25%);
+  }
+
+  @media print {
+    box-shadow: none;
+  }
+}
+
+figure {
+  position: relative;
+  
+  padding: .25em 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75em;
+
+  @include sm {
+    flex-direction: column;
+  }
+
+  &[aria-expanded="true"] {
+    max-height: initial;
+  }
+
+  a {
+    overflow: hidden;
+    max-width:  38.5ch;
+    max-height: 19.5ch;
+    box-shadow: none;
+    
+    @include sm {
+      max-width: unset;
+      max-height: 30ch;
+    }
+
+    &:hover,
+    &:focus {
+      border-radius: var(--outline-width);
+      box-shadow: 0 0 0 var(--outline-width) rgb(0 123 193 / 25%);
+    }
+  }
+
+  img {
+    display: inline-block;
+  }
+
+  figcaption {
+    display: inline-block;
+  }
+
+  button {
+    // position: absolute;
+    // left:   52ch;
+    // bottom: 0;
+    // margin-bottom: 1.25em;
+
+    background: none;
+    border: none;
+    padding: 0 .25em;
+    // color: white;
+
+    box-shadow: 0 var(--outline-width) 0 0 rgb(0 0 0 / 55%);
+
+    cursor: pointer;
+
+    &::after {
+      content: " ↓";
+    }
+
+    &[aria-pressed="true"]::after {
+      content: " ↑";
+    }
+
+    &:focus {
+      outline: 0;
+      border-radius: var(--outline-width);
+      box-shadow: 0 0 0 var(--outline-width) rgb(0 0 0 / 55%);
+    }
+  }
+}
+
+.hide-print {
+  @media print {
+    display: none;
+  }
+}
+
+.sm-only {
+  display: none;
+
+  @include sm {
+    display: block;
+  }
+}
+
+.hide-sm {
+  @include sm {
+    display: none;
+  }
+}
+
+.incredible-absolutely-phenomenal {
+  margin-top: 100rem;
+}

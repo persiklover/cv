@@ -1,0 +1,306 @@
+@charset "UTF-8";
+@import url(./reset.css);
+html {
+  --outline-width: .4rem;
+  font-size: 0.520834vw;
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 1.26595vw;
+  }
+}
+
+body {
+  position: relative;
+  font-family: "Hack", monospace;
+  font-size: 1.8rem;
+  line-height: 1.25em;
+  letter-spacing: 0.01em;
+  margin: 1.25em;
+}
+@media print {
+  body {
+    font-size: 2.6rem;
+  }
+}
+
+.me {
+  display: inline-flex;
+  margin-top: 1em;
+  margin-left: 4.5em;
+  height: 15ch;
+}
+@media print {
+  .me {
+    height: 13.5ch;
+  }
+}
+
+.intro strong {
+  font-size: 1.075em;
+}
+.intro .important {
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  font-family: "Courier Prime Code", monospace;
+  font-weight: normal;
+}
+.github {
+  display: inline-flex;
+  align-items: center;
+  box-shadow: none;
+}
+.github:hover, .github:focus {
+  box-shadow: none;
+  fill: #007bc1;
+}
+.github svg {
+  height: 2.4ch;
+  line-height: 1.5;
+  margin-top: -0.1em;
+  -webkit-margin-end: 0.5em;
+          margin-inline-end: 0.5em;
+}
+
+kbd {
+  background-color: #eee;
+  display: inline-block;
+  border-radius: 0.25em;
+  padding: 0.3em 0.5em;
+  font-family: inherit;
+  font-size: 0.85em;
+  color: #333;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+p {
+  margin-bottom: 0.4em;
+}
+
+address {
+  font-style: normal;
+}
+address p {
+  margin-top: 0.5em;
+  margin-bottom: 0.1em;
+}
+address p:first-of-type {
+  margin-top: 0;
+}
+
+button[aria-expanded] {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  box-shadow: 0 .4rem 0 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 var(--outline-width) 0 0 rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+button[aria-expanded]:focus {
+  outline: 0;
+  border-radius: .4rem;
+  border-radius: var(--outline-width);
+  box-shadow: 0 0 0 .4rem rgba(0, 0, 0, 0.55);
+  box-shadow: 0 0 0 var(--outline-width) rgba(0, 0, 0, 0.55);
+}
+button[aria-expanded]::after {
+  content: " ↓";
+}
+@media print {
+  button[aria-expanded] {
+    display: none;
+  }
+  button[aria-expanded] + * {
+    display: block;
+  }
+}
+button[aria-expanded][aria-expanded=true] {
+  margin-bottom: 0.5em;
+}
+button[aria-expanded][aria-expanded=true]::after {
+  content: " ↑";
+}
+
+@media print {
+  .collapsible {
+    display: block;
+  }
+}
+.collapsible ul {
+  margin-bottom: 0.4em;
+}
+.collapsible p:first-of-type {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Courier Prime Code", monospace;
+}
+
+h1 {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  font-size: 2.25em;
+}
+
+h2,
+h3,
+h4 {
+  margin: 1em 0 0.35em;
+}
+
+h4 {
+  margin-bottom: 0.4em;
+  font-size: 1.35em;
+}
+
+h3 {
+  font-size: 0.9em;
+  font-weight: normal;
+}
+h3 strong {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+h3 + small,
+h4 + small {
+  display: block;
+  margin-top: -0.4em;
+  margin-bottom: 0.5em;
+}
+
+ul {
+  margin: 0;
+  padding-left: 2.75em;
+  list-style: "→ ";
+}
+ul.timeline {
+  list-style: none;
+  padding: 0;
+}
+ul.inline {
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+ul.inline > * + * {
+  margin-left: 0.75ch;
+}
+ul.inline li::after {
+  content: ",";
+}
+a {
+  box-shadow: 0 .4rem 0 0 rgba(0, 123, 193, 0.25);
+  box-shadow: 0 var(--outline-width) 0 0 rgba(0, 123, 193, 0.25);
+  color: #007bc1;
+  text-decoration: none;
+}
+a:hover {
+  box-shadow: 0 .4rem 0 0 rgba(0, 123, 193, 0.75);
+  box-shadow: 0 var(--outline-width) 0 0 rgba(0, 123, 193, 0.75);
+}
+a:focus {
+  outline: 0;
+  border-radius: .4rem;
+  border-radius: var(--outline-width);
+  box-shadow: 0 0 0 .4rem rgba(0, 123, 193, 0.25);
+  box-shadow: 0 0 0 var(--outline-width) rgba(0, 123, 193, 0.25);
+}
+@media print {
+  a {
+    box-shadow: none;
+  }
+}
+
+figure {
+  position: relative;
+  padding: 0.25em 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75em;
+}
+@media screen and (max-width: 768px) {
+  figure {
+    flex-direction: column;
+  }
+}
+figure[aria-expanded=true] {
+  max-height: initial;
+}
+figure a {
+  overflow: hidden;
+  max-width: 38.5ch;
+  max-height: 19.5ch;
+  box-shadow: none;
+}
+@media screen and (max-width: 768px) {
+  figure a {
+    max-width: unset;
+    max-height: 30ch;
+  }
+}
+figure a:hover, figure a:focus {
+  border-radius: .4rem;
+  border-radius: var(--outline-width);
+  box-shadow: 0 0 0 .4rem rgba(0, 123, 193, 0.25);
+  box-shadow: 0 0 0 var(--outline-width) rgba(0, 123, 193, 0.25);
+}
+figure img {
+  display: inline-block;
+}
+figure figcaption {
+  display: inline-block;
+}
+figure button {
+  background: none;
+  border: none;
+  padding: 0 0.25em;
+  box-shadow: 0 .4rem 0 0 rgba(0, 0, 0, 0.55);
+  box-shadow: 0 var(--outline-width) 0 0 rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+}
+figure button::after {
+  content: " ↓";
+}
+figure button[aria-pressed=true]::after {
+  content: " ↑";
+}
+figure button:focus {
+  outline: 0;
+  border-radius: .4rem;
+  border-radius: var(--outline-width);
+  box-shadow: 0 0 0 .4rem rgba(0, 0, 0, 0.55);
+  box-shadow: 0 0 0 var(--outline-width) rgba(0, 0, 0, 0.55);
+}
+
+@media print {
+  .hide-print {
+    display: none;
+  }
+}
+
+.sm-only {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .sm-only {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hide-sm {
+    display: none;
+  }
+}
+
+.incredible-absolutely-phenomenal {
+  margin-top: 100rem;
+}
