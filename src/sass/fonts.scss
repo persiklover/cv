@@ -1,2 +1,25 @@
 $font: "../fonts/";
 
+@font-face {
+  font-family: "Hack";
+  src: 
+    local("Hack Regular"),
+    local("Hack-Regular"),
+    url($font + "Hack-Regular.woff2") format("woff2"),
+    url($font + "Hack-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Courier Prime Code";
+  src: 
+    local("Courier Prime Code"),
+    local("CourierPrimeCode"),
+    url($font + "CourierPrimeCode.woff2") format("woff2"),
+    url($font + "CourierPrimeCode.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
