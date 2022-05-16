@@ -1,0 +1,238 @@
+mixin project(name, link, imgSrc, comment)
+ .project
+    h4!= name
+    if comment
+      small= comment
+    figure
+      a(href=link target="_blank")
+        img(src=imgSrc alt=name)
+      figcaption
+        if block
+          block
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+    link(rel="stylesheet" href="css/style.css")
+    title Dan Grinberg — Frontend Developer
+  body
+    .intro
+      | Hi! My name is
+      h1 Dan Grinberg.
+      p
+        | I'm a #[strong frontend developer] with 4+ years of experience
+        | from St. Petersburg.
+      img.me(src="./img/me.jpg" alt="Мое фото")
+
+    h2 Here are the technologies I use most often:
+    ul
+      li React
+      li Sass/SCSS (BEM, PostCSS)
+      li JavaScript (ES6+, TypeScript, jQuery)
+      li Webpack, Gulp
+      li Unit-tests (Jest, Testing Library)
+      li Git, GitHub
+
+    h2 Experience
+    ul.timeline
+      li
+        h3
+          strong Freelance
+          |  // November 2017 — February 2020
+        p.
+          I started by helping my friends build their websites. #[br]
+          Then took jobs on Upwork-like marketplaces: #[br]
+          I've been developing responsive landing pages and multipage websites. #[br]
+          Adding Google & Yandex metrics. Developing simple PHP scripts.
+        p.
+          During this time I've had a chance to work with
+          #[br.sm-only] LEVI's, Xiaomi, Divico, and Stoloto. #[br]
+
+          #[span.hide-print Here are some projects that I built from scratch:]
+
+        .projects.hide-print
+
+          +project(
+            "LEVI's Music Project",
+            "http://levismusicproject.ru",
+            "img/levis-music-project.png"
+          )
+            | Сверстал из PSD,        #[br]
+            | написал всю логику,     #[br]
+            | прикрутил слайдеры,     #[br]
+            | сделал валидацию формы, #[br]
+            | настроил отправку данных в 
+            a(href="https://developers.google.com/sheets/api") гугл-таблицы
+
+          +project(
+            "MiNote10 x Andrey Berger",
+            "https://minote10xberger.ru",
+            "img/minote10xberger.png"
+          )
+            | Работал над версткой и оптимизацией загрузки страницы:
+            ul
+              li Уменьшил вес фотографий (в среднем с 10-40МБ до 80-150kB)
+              li Реализовал подгрузку плеера по клику по обложке
+            br
+            | Написал свое всплывающее окно с возомжностью zoom'а 
+            | #[br.sm-only] и перемещения #[br]
+            | по арт-объектам в качестве 100+МП
+
+          +project(
+            "FRBDN design-bureau",
+            "https://frbdn.ru",
+            "img/frbdn.png"
+          )
+            | Сделал сайт для моих друзей из FRBDN. #[br]
+            | Из исходников: шрифты, графика и 2 PSD макета — 1920px и 768px. #[br]
+            br
+            | Из интересного:
+            ul
+              li Cлайдер-портфолио с фильтрами
+              li Русская и английская версия
+              li Сохранение заявок в гугл-таблицах + отправка на почту
+          
+          +project(
+            "Divico promotion campaign",
+            "https://persiklover.github.io/divico/public/",
+            "img/divico.png"
+          )
+            | Одна из моих первых совместных работ с Divico. #[br]
+            | Главная особенность сайта — стилизация под графику игрового автомата.
+            br
+            br
+            | Больше всего понравилось делать анимации появления при скролле и hover-эффекты, #[br]
+            | а еще стилизать чекбоксы и ползунки.
+
+          +project(
+            "Stoloto",
+            "https://top.stoloto.ru",
+            "img/top.stoloto.ru.png"
+          )
+            | Работал с API Столото: #[br]
+            | запрашивал актуальные данные о лотереях и выводил их в слайдер #[br]
+            br
+            | Еще там есть плавный скролл к нужной странице слайдера #[br]
+            | и небольшой параллакс-эффект
+
+          +project(
+            "Agroprodmash 2019",
+            "https://persiklover.github.io/agroprodmash",
+            "img/agroprodmash.png"
+          )
+            | Сверстал, адаптировал, сделал анимацию для бургер-меню.
+            br
+            br
+            | Реализовал подгрузку плеера по клику по обложке, #[br]
+            | чтобы сэкономить интернет-траффик пользователей мобильных устройств.
+            br
+            br
+            | Интегрировал виджет для регистрации на мероприятие
+
+      li
+        h3
+          strong William Reilly School, #[br.sm-only] English teacher
+          |  // August 2019 — November 2019
+        p
+          | I've been teaching teenagers and grown-ups.
+
+      li
+        h3
+          strong Lead Frontend Developer
+          |  // March 2020 — February 2022
+        small
+          | Due to the contract terms, I cannot state the company's name or share any screenshots of my work
+          br
+          | but I #[i can] tell #[i what] I was doing there.
+
+        p Technologies I've worked with:
+        ul.two-columns
+          li React
+          li React Context API
+          li Sass/SCSS
+          li #[a(href="https://ant.design") Ant UI]
+          li #[a(href="https://charts.ant.design/en") antv] и #[a(href="https://www.anychart.com") anychart]
+          li Jest, Testing Library
+
+        p.
+          My job was to develop the client side with React. #[br]
+          I've been creating both isolated & reusable components #[br]
+          and entire Single-Page Applications. #[br]
+          Writing unit tests was also a part of my job.
+        p.
+          Used dynamic charts from #[a(href="https://charts.ant.design/en") antv] и #[a(href="https://www.anychart.com") anychart] #[br]
+          to visualize stats on the page.
+        p.
+          We used Trello as a progress tracker #[br]
+          following the "one card = one task" rule. #[br]
+          All completed tasks had to be committed and pushed to git.
+        p.
+          We also had a backend team on the project. They provided methods #[br]
+          for authentication and saving users' data on the page. #[br] 
+          I've been working with their API. #[br]
+          I was sending and chaining multiple asynchronous requests #[br]
+          to fetch data needed in the page's logic in the correct order. 
+        p.
+          Later on, I started managing a small frontend team. #[br]
+          I've been giving & checking tasks, mentoring, and cove-reviewing.
+
+    h2 About me
+    p
+      a.github.hide-print(
+        href="https://github.com/persiklover"
+        target="_blank" title="GitHub"
+      )
+        svg.ico(
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          role="img"
+          aria-labelledby="GithubIconTitle"
+        )
+          title#GithubIconTitle GitHub logo
+          path(
+            stroke="none"
+            fill-rule="evenodd"
+            d="M8 0C3.6 0 0 3.6 0 8c0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1.1-2.7-1.1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6 0 1.3-.1 2-.1s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.3.6.8.6 1.5v2.2c0 .2.1.5.6.4C13.7 14.5 16 11.5 16 8c0-4.4-3.6-8-8-8z"
+            clip-rule="evenodd"
+          )
+        | // My GitHub 
+    p.
+      I work in VSCode. #[br]
+      To analyze mockups I use Avocode, Photoshop, and Figma. #[br]
+      Familiar with Markdown and Pug. A little less with PHP. #[br]
+    p.
+      Experienced in building responsive and cross-browser websites. #[br]
+      I love semantic and accessible interfaces. #[br]
+      I have a good understanding of what #[code aria-*] attributes are and what they're for.
+    p.
+      Very good at vanilla JavaScript. #[br]
+      I document my code with JSDoc and debug it in Chrome Devtools.
+    p.
+      I can edit configs and write them from scratch. #[br]
+      Webpack, Gulp, Babel, eslint are just a few.
+    p.
+      Regularly use Trello and git for my pet projects.
+    p.
+      In my free time, I like to make games. #[br]
+      Now, for example, I'm learning the Godot engine.
+
+    h2 Languages
+    ul
+      li Russian — Native
+      li English — C1, I have no problem reading documentation #[br.sm-only] or communicating with native speakers
+
+    h2 Contact me
+    address
+      p You can text me on Telegram
+      a(href="https://t.me/persiklover" target="_blank") t.me/persiklover
+
+      p But you can also send me an email
+      a(href="mailto:dannniska@gmail.com" target="_blank") dannniska@gmail.com
+
+    p.incredible-absolutely-phenomenal.hide-print.
+      Это резюме можно распечатать через #[kbd Ctrl] + #[kbd P]
+
+    script(src="js/index.js")
