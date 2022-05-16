@@ -25,6 +25,7 @@ body {
 
   @media print {
     font-size: 2.6rem;
+    line-height: 1.135;
   }
 }
 
@@ -85,7 +86,8 @@ body {
   }
 }
 
-kbd {
+kbd,
+code {
   background-color: #eee;
   display: inline-block;
   border-radius: .25em;
@@ -185,6 +187,10 @@ h1 {
   margin-bottom: .25em;
 
   font-size: 2.25em;
+
+  @media print {
+    margin: 0 .1em;
+  }
 }
 
 h2,
@@ -226,7 +232,8 @@ h4 {
 
 ul {
   margin: 0;
-  // margin-top: -.25em;
+  // margin-top:   -.25em;
+  margin-bottom: .35em;
   padding-left: 2.75em;
   list-style: "→ ";
 
@@ -237,8 +244,9 @@ ul {
 
   &.inline {
     padding: 0;
-    // margin: 0;
-    display: flex;
+    margin-top: -.4em;
+
+    display: inline-flex;
     list-style: none;
 
     > * + * {
@@ -251,10 +259,9 @@ ul {
   }
 
   &.two-columns {
-    // background: pink;
-    // width: 33em;
-    // column-count: 2;
-    // column-
+    width: 33em;
+    column-count: 2;
+    line-height: 1.45;
   }
 }
 
@@ -275,6 +282,30 @@ a {
 
   @media print {
     box-shadow: none;
+  }
+}
+
+.projects {
+  padding: 1em 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  gap: 2em;
+
+  @include sm {
+    width: unset;
+  }
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+
+  h4 {
+    margin-top: 0;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -318,6 +349,7 @@ figure {
 
   figcaption {
     display: inline-block;
+    display: none;
   }
 
   button {
