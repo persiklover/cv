@@ -1,5 +1,19 @@
 @charset "UTF-8";
 @import url(./reset.css);
+@font-face {
+  font-family: "Hack";
+  src: local("Hack Regular"), local("Hack-Regular"), url("../fonts/Hack-Regular.woff2") format("woff2"), url("../fonts/Hack-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Courier Prime Code";
+  src: local("Courier Prime Code"), local("CourierPrimeCode"), url("../fonts/CourierPrimeCode.woff2") format("woff2"), url("../fonts/CourierPrimeCode.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 html {
   --outline-width: .4rem;
   font-size: 0.520834vw;
@@ -21,6 +35,7 @@ body {
 @media print {
   body {
     font-size: 2.6rem;
+    line-height: 1.135;
   }
 }
 
@@ -63,7 +78,8 @@ body {
           margin-inline-end: 0.5em;
 }
 
-kbd {
+kbd,
+code {
   background-color: #eee;
   display: inline-block;
   border-radius: 0.25em;
@@ -149,6 +165,11 @@ h1 {
   margin-bottom: 0.25em;
   font-size: 2.25em;
 }
+@media print {
+  h1 {
+    margin: 0 0.1em;
+  }
+}
 
 h2,
 h3,
@@ -178,6 +199,7 @@ h4 + small {
 
 ul {
   margin: 0;
+  margin-bottom: 0.35em;
   padding-left: 2.75em;
   list-style: "→ ";
 }
@@ -187,7 +209,8 @@ ul.timeline {
 }
 ul.inline {
   padding: 0;
-  display: flex;
+  margin-top: -0.4em;
+  display: inline-flex;
   list-style: none;
 }
 ul.inline > * + * {
@@ -196,6 +219,13 @@ ul.inline > * + * {
 ul.inline li::after {
   content: ",";
 }
+ul.two-columns {
+  width: 33em;
+  -moz-column-count: 2;
+       column-count: 2;
+  line-height: 1.45;
+}
+
 a {
   box-shadow: 0 .4rem 0 0 rgba(0, 123, 193, 0.25);
   box-shadow: 0 var(--outline-width) 0 0 rgba(0, 123, 193, 0.25);
@@ -217,6 +247,30 @@ a:focus {
   a {
     box-shadow: none;
   }
+}
+
+.projects {
+  padding: 1em 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  gap: 2em;
+}
+@media screen and (max-width: 768px) {
+  .projects {
+    width: unset;
+  }
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+}
+.project h4 {
+  margin-top: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
 }
 
 figure {
@@ -257,6 +311,7 @@ figure img {
 }
 figure figcaption {
   display: inline-block;
+  display: none;
 }
 figure button {
   background: none;

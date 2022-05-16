@@ -23,4 +23,5 @@ _toConsumableArray(document.querySelectorAll('button[aria-expanded]')).forEach(f
   }); // По дефолту скрываем все раскрываемые блоки 
 
   button.click();
+  button.click();
 });
