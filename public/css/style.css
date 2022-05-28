@@ -34,7 +34,7 @@ body {
 }
 @media print {
   body {
-    font-size: 2.6rem;
+    font-size: 2.635rem;
     line-height: 1.135;
   }
 }
@@ -51,15 +51,17 @@ body {
   }
 }
 
+.intro {
+  position: relative;
+  display: inline-block;
+}
 .intro strong {
   font-size: 1.075em;
 }
 .intro .important {
-  position: absolute;
-  right: 0;
   display: inline-block;
-  font-family: "Courier Prime Code", monospace;
-  font-weight: normal;
+  background: #f6e58d;
+  padding: 0.3em 0.5em 0.15em;
 }
 .github {
   display: inline-flex;
@@ -79,21 +81,39 @@ body {
 }
 
 kbd,
-code {
+code,
+i.marked {
   background-color: #eee;
   display: inline-block;
   border-radius: 0.25em;
-  padding: 0.3em 0.5em;
+  padding: 0.2em 0.5em 0.2em;
   font-family: inherit;
   font-size: 0.85em;
   color: #333;
+  font-style: normal;
   font-weight: 700;
   line-height: 1;
   white-space: nowrap;
 }
+kbd:focus-within,
+code:focus-within,
+i.marked:focus-within {
+  outline: .4rem solid rgba(0, 123, 193, 0.25);
+  outline: var(--outline-width) solid rgba(0, 123, 193, 0.25);
+  outline-offset: 0.15em;
+}
+kbd a,
+code a,
+i.marked a {
+  box-shadow: none;
+}
 
 p {
   margin-bottom: 0.4em;
+}
+p.no-margin {
+  margin: 0;
+  margin-bottom: 0.2em;
 }
 
 address {
@@ -183,6 +203,7 @@ h4 {
 }
 
 h3 {
+  font-family: "Hack", monospace;
   font-size: 0.9em;
   font-weight: normal;
 }
@@ -193,8 +214,8 @@ h3 strong {
 h3 + small,
 h4 + small {
   display: block;
-  margin-top: -0.4em;
   margin-bottom: 0.5em;
+  line-height: 1.1;
 }
 
 ul {
@@ -210,6 +231,7 @@ ul.timeline {
 ul.inline {
   padding: 0;
   margin-top: -0.4em;
+  margin-bottom: 0.7em;
   display: inline-flex;
   list-style: none;
 }
@@ -218,6 +240,9 @@ ul.inline > * + * {
 }
 ul.inline li::after {
   content: ",";
+}
+ul.inline li:last-child::after {
+  display: none;
 }
 ul.two-columns {
   width: 33em;
