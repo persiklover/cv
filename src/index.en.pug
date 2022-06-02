@@ -22,19 +22,19 @@ html(lang="ru")
     .intro
       | Hi! My name is
       h1 Dan Grinberg.
-      p
-        | I'm a #[strong frontend developer] with 4+ years of experience
-        | from St. Petersburg.
-      img.me(src="./img/me.jpg" alt="Мое фото")
+      p.
+        I'm a #[strong frontend developer] with 4+ years of experience from Yerevan.
+        #[span.important Looking for a remote job]
+      img.me(src="./img/me.jpg" alt="My photo")
 
-    h2 Here are the technologies I use most often:
+    h2 Technologies I use most often:
     ul
       li React
-      li Sass/SCSS (BEM, PostCSS)
-      li JavaScript (ES6+, TypeScript, jQuery)
+      li Sass/SCSS (BEM, PostCSS, CSS Modules)
+      li JavaScript (ES6+, TypeScript)
       li Webpack, Gulp
-      li Unit-tests (Jest, Testing Library)
-      li Git, GitHub
+      li Unit testing (Jest, Testing Library)
+      li git, GitHub
 
     h2 Experience
     ul.timeline
@@ -42,23 +42,36 @@ html(lang="ru")
         h3
           strong Freelance
           |  // November 2017 — February 2020
+        p.no-margin I've been working with:
+        ul.inline
+          li #[i.marked HTML]
+          li #[i.marked Sass]
+          li #[i.marked JavaScript]
+          li #[i.marked Gulp]
+          li #[i.marked jQuery]
+          li #[i.marked Flexbox]
+          li #[i.marked media-queries]
+          li #[i.marked PHP]
         p.
-          I started by helping my friends build their websites. #[br]
-          Then took jobs on Upwork-like marketplaces: #[br]
-          I've been developing responsive landing pages and multipage websites. #[br]
-          Adding Google & Yandex metrics. Developing simple PHP scripts.
+          I've been developing responsive landing pages and multipage websites #[br]
+          on Upwork-like marketplaces. Adding Google & Yandex metrics. #[br]
+          Using PHP as a backend language.
         p.
-          During this time I've had a chance to work with
-          #[br.sm-only] LEVI's, Xiaomi, Divico, and Stoloto. #[br]
+          During this time I've worked with
+          #[a(href="https://levi.com/US/en_US/" target="_blank") LEVI's],
+          #[a(href="https://mi.com/ru" target="_blank") Xiaomi],
+          #[a(href="http://divico.ru/" target="_blank") Divico],
+          and 
+          #[a(href="https://www.stoloto.ru/" target="_blank") Столото]. #[br]
 
-          #[span.hide-print Here are some projects that I built from scratch:]
+          #[span.hide-print Here are some of my projects:]
 
         .projects.hide-print
 
           +project(
             "LEVI's Music Project",
             "http://levismusicproject.ru",
-            "img/levis-music-project.png"
+            "img/levis-music-project.jpg"
           )
             | Сверстал из PSD,        #[br]
             | написал всю логику,     #[br]
@@ -70,7 +83,7 @@ html(lang="ru")
           +project(
             "MiNote10 x Andrey Berger",
             "https://minote10xberger.ru",
-            "img/minote10xberger.png"
+            "img/minote10xberger.jpg"
           )
             | Работал над версткой и оптимизацией загрузки страницы:
             ul
@@ -84,7 +97,7 @@ html(lang="ru")
           +project(
             "FRBDN design-bureau",
             "https://frbdn.ru",
-            "img/frbdn.png"
+            "img/frbdn.jpg"
           )
             | Сделал сайт для моих друзей из FRBDN. #[br]
             | Из исходников: шрифты, графика и 2 PSD макета — 1920px и 768px. #[br]
@@ -98,7 +111,7 @@ html(lang="ru")
           +project(
             "Divico promotion campaign",
             "https://persiklover.github.io/divico/public/",
-            "img/divico.png"
+            "img/divico.jpg"
           )
             | Одна из моих первых совместных работ с Divico. #[br]
             | Главная особенность сайта — стилизация под графику игрового автомата.
@@ -110,7 +123,7 @@ html(lang="ru")
           +project(
             "Stoloto",
             "https://top.stoloto.ru",
-            "img/top.stoloto.ru.png"
+            "img/top.stoloto.ru.jpg"
           )
             | Работал с API Столото: #[br]
             | запрашивал актуальные данные о лотереях и выводил их в слайдер #[br]
@@ -121,7 +134,7 @@ html(lang="ru")
           +project(
             "Agroprodmash 2019",
             "https://persiklover.github.io/agroprodmash",
-            "img/agroprodmash.png"
+            "img/agroprodmash.jpg"
           )
             | Сверстал, адаптировал, сделал анимацию для бургер-меню.
             br
@@ -146,38 +159,37 @@ html(lang="ru")
         small
           | Due to the contract terms, I cannot state the company's name or share any screenshots of my work
           br
-          | but I #[i can] tell #[i what] I was doing there.
+          | but I #[i can] tell you #[i what] I've been doing there.
 
-        p Technologies I've worked with:
-        ul.two-columns
-          li React
-          li React Context API
-          li Sass/SCSS
-          li #[a(href="https://ant.design") Ant UI]
-          li #[a(href="https://charts.ant.design/en") antv] и #[a(href="https://www.anychart.com") anychart]
-          li Jest, Testing Library
+        p.no-margin Technologies I've worked with:
+        ul.inline
+          li #[i.marked React (v16.8+)]
+          li #[i.marked #[a(href="https://ant.design") AntD]]
+          li #[i.marked React Context API]
+          li #[i.marked TypeScript]
+          li #[i.marked Sass/SCSS]
+          li #[i.marked Jest], #[i.marked Testing Library]
 
         p.
-          My job was to develop the client side with React. #[br]
+          My job was to develop the client side with #[i.marked React]. #[br]
           I've been creating both isolated & reusable components #[br]
           and entire Single-Page Applications. #[br]
-          Writing unit tests was also a part of my job.
+          Writing #[i.marked unit tests] was also a part of my job.
         p.
-          Used dynamic charts from #[a(href="https://charts.ant.design/en") antv] и #[a(href="https://www.anychart.com") anychart] #[br]
+          I've been using dynamic charts from #[a(href="https://charts.ant.design/en") antv] и #[a(href="https://www.anychart.com") anychart] #[br]
           to visualize stats on the page.
         p.
-          We used Trello as a progress tracker #[br]
-          following the "one card = one task" rule. #[br]
-          All completed tasks had to be committed and pushed to git.
+          We used #[i.marked Trello] as a progress tracker. #[br]
+          All completed tasks had to be committed and pushed to #[i.marked git].
         p.
           We also had a backend team on the project. They provided methods #[br]
           for authentication and saving users' data on the page. #[br] 
-          I've been working with their API. #[br]
-          I was sending and chaining multiple asynchronous requests #[br]
-          to fetch data needed in the page's logic in the correct order. 
+          I've been working with their #[i.marked REST API]. #[br]
+          Sending and chaining multiple asynchronous requests #[br]
+          was necessary to fetch the data needed in the page's logic. 
         p.
           Later on, I started managing a small frontend team. #[br]
-          I've been giving & checking tasks, mentoring, and cove-reviewing.
+          I've been giving & checking tasks, mentoring, and #[i.marked cove-reviewing].
 
     h2 About me
     p
@@ -201,20 +213,19 @@ html(lang="ru")
         | // My GitHub 
     p.
       I work in VSCode. #[br]
-      To analyze mockups I use Avocode, Photoshop, and Figma. #[br]
-      Familiar with Markdown and Pug. A little less with PHP. #[br]
+      To analyze mockups I use Avocode and Figma. #[br]
+      Familiar with #[i.marked Markdown] and #[i.marked Pug]. A little less with #[i.marked PHP]. #[br]
     p.
-      Experienced in building responsive and cross-browser websites. #[br]
-      I love semantic and accessible interfaces. #[br]
-      I have a good understanding of what #[code aria-*] attributes are and what they're for.
+      Experienced in building responsive and cross browser websites. #[br]
+      Love semantics, have a good understanding of what #[code aria-*] attributes are and what they're for.
     p.
-      Very good at vanilla JavaScript. #[br]
-      I document my code with JSDoc and debug it in Chrome Devtools.
+      Very good at vanilla #[i.marked JavaScript]. #[br]
+      I document my code with #[i.marked JSDoc] and debug it in #[i.marked Chrome Devtools].
     p.
       I can edit configs and write them from scratch. #[br]
-      Webpack, Gulp, Babel, eslint are just a few.
+      #[i.marked Webpack], #[i.marked Gulp], #[i.marked Babel], #[i.marked eslint] are just a few.
     p.
-      Regularly use Trello and git for my pet projects.
+      Regularly use #[i.marked Trello] and #[i.marked git] for my pet projects.
     p.
       In my free time, I like to make games. #[br]
       Now, for example, I'm learning the Godot engine.
