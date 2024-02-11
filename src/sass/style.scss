@@ -315,7 +315,8 @@ a {
   padding: 1em 0;
   display: flex;
   flex-wrap: wrap;
-  width: 55em;
+  max-width: 55em;
+  width: 100%;
   gap: 2em;
 
   @include sm {
