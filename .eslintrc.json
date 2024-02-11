@@ -1,5 +1,4 @@
 {
-  
   "ignorePatterns": ["*.test.js"],
   "env": {
     "es6": true,
@@ -30,7 +29,7 @@
       "error",
       {
         "before": false,
-        "after": true
+        "after":  true
       }
     ],
     "no-empty": "warn",

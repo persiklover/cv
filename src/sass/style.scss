@@ -19,13 +19,13 @@ body {
   font-family: "Hack", monospace;
   font-size: 1.8rem;
   line-height: 1.25em;
-  letter-spacing: .01em;
+  letter-spacing: .005em;
 
   margin: 1.25em;
 
   @media print {
-    font-size: 2.635rem;
-    line-height: 1.135;
+    font-size: 2.8rem;
+    line-height: 1.125;
   }
 }
 
@@ -37,10 +37,6 @@ body {
   // border-radius: 50%;
 
   @media print {
-    // margin: 0;
-    // position: absolute;
-    // left:  0;
-    // top:   0;
     height: 13.5ch;
   }
 }
@@ -54,13 +50,7 @@ body {
   }
 
   .important {
-    // position: absolute;
-    // right: 0;
-    // margin-top: 1em;
     display: inline-block;
-
-    // font-family: "Courier Prime Code", monospace;
-    // font-weight: bold;
     background: #f6e58d;
     padding: .3em .5em .15em;
   }
@@ -90,10 +80,6 @@ body {
     margin-inline-end: .5em;
   }
 }
-
-// i {
-//   font-family: "Courier Prime Code", sans-serif;
-// }
 
 kbd,
 code,
@@ -208,6 +194,7 @@ h3 {
 }
 
 h1 {
+  font-family: "Hack", monospace;
   margin-top:    .25em;
   margin-bottom: .25em;
 
@@ -258,7 +245,8 @@ h4 {
   }
 }
 
-ul {
+ul,
+ol {
   margin: 0;
   // margin-top:   -.25em;
   margin-bottom: .35em;
@@ -266,8 +254,12 @@ ul {
   list-style: "→ ";
 
   &.timeline {
-    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    list-style: decimal-leading-zero;
     padding: 0;
+    padding-left: 2em;
   }
 
   &.inline {
@@ -324,7 +316,7 @@ a {
   padding: 1em 0;
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  width: 55em;
   gap: 2em;
 
   @include sm {
@@ -341,79 +333,82 @@ a {
     flex-grow: 1;
     display: flex;
     align-items: center;
-  }
-}
 
-figure {
-  position: relative;
-  
-  padding: .25em 0;
-  display: flex;
-  align-items: flex-start;
-  gap: 1.75em;
-
-  @include sm {
-    flex-direction: column;
+    font-size: .9em;
   }
 
-  &[aria-expanded="true"] {
-    max-height: initial;
-  }
-
-  a {
-    overflow: hidden;
-    max-width:  38.5ch;
-    max-height: 19.5ch;
-    box-shadow: none;
+  figure {
+    position: relative;
     
+    padding: .25em 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.75em;
+  
     @include sm {
-      max-width: unset;
-      max-height: 30ch;
+      flex-direction: column;
     }
-
-    &:hover,
-    &:focus {
-      border-radius: var(--outline-width);
-      box-shadow: 0 0 0 var(--outline-width) rgb(0 123 193 / 25%);
+  
+    &[aria-expanded="true"] {
+      max-height: initial;
     }
-  }
-
-  img {
-    display: inline-block;
-  }
-
-  figcaption {
-    display: inline-block;
-    display: none;
-  }
-
-  button {
-    // position: absolute;
-    // left:   52ch;
-    // bottom: 0;
-    // margin-bottom: 1.25em;
-
-    background: none;
-    border: none;
-    padding: 0 .25em;
-    // color: white;
-
-    box-shadow: 0 var(--outline-width) 0 0 rgb(0 0 0 / 55%);
-
-    cursor: pointer;
-
-    &::after {
-      content: " ↓";
+  
+    a {
+      overflow: hidden;
+      max-width:  26ch;
+      // max-height: 19.5ch;
+      aspect-ratio: 16 / 9;
+      box-shadow: none;
+      
+      @include sm {
+        max-width: unset;
+        max-height: 30ch;
+      }
+  
+      &:hover,
+      &:focus {
+        border-radius: var(--outline-width);
+        box-shadow: 0 0 0 var(--outline-width) rgb(0 123 193 / 25%);
+      }
     }
-
-    &[aria-pressed="true"]::after {
-      content: " ↑";
+  
+    img {
+      display: inline-block;
     }
-
-    &:focus {
-      outline: 0;
-      border-radius: var(--outline-width);
-      box-shadow: 0 0 0 var(--outline-width) rgb(0 0 0 / 55%);
+  
+    figcaption {
+      display: inline-block;
+      display: none;
+    }
+  
+    button {
+      // position: absolute;
+      // left:   52ch;
+      // bottom: 0;
+      // margin-bottom: 1.25em;
+  
+      background: none;
+      border: none;
+      padding: 0 .25em;
+      // color: white;
+  
+      box-shadow: 0 var(--outline-width) 0 0 rgb(0 0 0 / 55%);
+  
+      cursor: pointer;
+  
+      &::after {
+        content: " ↓";
+      }
+  
+      &[aria-pressed="true"]::after {
+        content: " ↑";
+      }
+  
+      &:focus {
+        outline: 0;
+        border-radius: var(--outline-width);
+        box-shadow: 0 0 0 var(--outline-width) rgb(0 0 0 / 55%);
+      }
     }
   }
 }

@@ -29,13 +29,13 @@ body {
   font-family: "Hack", monospace;
   font-size: 1.8rem;
   line-height: 1.25em;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.005em;
   margin: 1.25em;
 }
 @media print {
   body {
-    font-size: 2.635rem;
-    line-height: 1.135;
+    font-size: 2.8rem;
+    line-height: 1.125;
   }
 }
 
@@ -181,6 +181,7 @@ h3 {
 }
 
 h1 {
+  font-family: "Hack", monospace;
   margin-top: 0.25em;
   margin-bottom: 0.25em;
   font-size: 2.25em;
@@ -218,33 +219,44 @@ h4 + small {
   line-height: 1.1;
 }
 
-ul {
+ul,
+ol {
   margin: 0;
   margin-bottom: 0.35em;
   padding-left: 2.75em;
   list-style: "→ ";
 }
-ul.timeline {
-  list-style: none;
+ul.timeline,
+ol.timeline {
+  display: flex;
+  flex-direction: column;
+  flex-direction: column-reverse;
+  list-style: decimal-leading-zero;
   padding: 0;
+  padding-left: 2em;
 }
-ul.inline {
+ul.inline,
+ol.inline {
   padding: 0;
   margin-top: -0.4em;
   margin-bottom: 0.7em;
   display: inline-flex;
   list-style: none;
 }
-ul.inline > * + * {
+ul.inline > * + *,
+ol.inline > * + * {
   margin-left: 0.75ch;
 }
-ul.inline li::after {
+ul.inline li::after,
+ol.inline li::after {
   content: ",";
 }
-ul.inline li:last-child::after {
+ul.inline li:last-child::after,
+ol.inline li:last-child::after {
   display: none;
 }
-ul.two-columns {
+ul.two-columns,
+ol.two-columns {
   width: 33em;
   -moz-column-count: 2;
        column-count: 2;
@@ -278,7 +290,7 @@ a:focus {
   padding: 1em 0;
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  width: 55em;
   gap: 2em;
 }
 @media screen and (max-width: 768px) {
@@ -296,9 +308,9 @@ a:focus {
   flex-grow: 1;
   display: flex;
   align-items: center;
+  font-size: 0.9em;
 }
-
-figure {
+.project figure {
   position: relative;
   padding: 0.25em 0;
   display: flex;
@@ -306,39 +318,39 @@ figure {
   gap: 1.75em;
 }
 @media screen and (max-width: 768px) {
-  figure {
+  .project figure {
     flex-direction: column;
   }
 }
-figure[aria-expanded=true] {
+.project figure[aria-expanded=true] {
   max-height: initial;
 }
-figure a {
+.project figure a {
   overflow: hidden;
-  max-width: 38.5ch;
-  max-height: 19.5ch;
+  max-width: 26ch;
+  aspect-ratio: 16/9;
   box-shadow: none;
 }
 @media screen and (max-width: 768px) {
-  figure a {
+  .project figure a {
     max-width: unset;
     max-height: 30ch;
   }
 }
-figure a:hover, figure a:focus {
+.project figure a:hover, .project figure a:focus {
   border-radius: .4rem;
   border-radius: var(--outline-width);
   box-shadow: 0 0 0 .4rem rgba(0, 123, 193, 0.25);
   box-shadow: 0 0 0 var(--outline-width) rgba(0, 123, 193, 0.25);
 }
-figure img {
+.project figure img {
   display: inline-block;
 }
-figure figcaption {
+.project figure figcaption {
   display: inline-block;
   display: none;
 }
-figure button {
+.project figure button {
   background: none;
   border: none;
   padding: 0 0.25em;
@@ -346,13 +358,13 @@ figure button {
   box-shadow: 0 var(--outline-width) 0 0 rgba(0, 0, 0, 0.55);
   cursor: pointer;
 }
-figure button::after {
+.project figure button::after {
   content: " ↓";
 }
-figure button[aria-pressed=true]::after {
+.project figure button[aria-pressed=true]::after {
   content: " ↑";
 }
-figure button:focus {
+.project figure button:focus {
   outline: 0;
   border-radius: .4rem;
   border-radius: var(--outline-width);

@@ -3,7 +3,6 @@ const del = require('del');
 const sync = require('browser-sync');
 
 // HTML
-
 const pug = require('gulp-pug');
 
 // CSS

@@ -23,21 +23,21 @@ html(lang="ru")
       | Приветствую! Меня зовут
       h1 Данила Гринберг.
       p.
-        Я #[strong frontend-разработчик] с 4+ годами опыта. Живу в Ереване.
-        #[span.important Ищу удаленную работу]
+        Я #[strong frontend-разработчик] с 5+ годами опыта.
+      //-  #[span.important Ищу удаленную работу]
       img.me(src="./img/me.jpg" alt="Мое фото")
 
     h2 Стек технологий, с которыми чаще всего работаю:
     ul
-      li React
-      li Sass/SCSS (БЭМ, PostCSS, CSS Modules)
-      li JavaScript (ES6+, TypeScript)
-      li Webpack, Gulp
+      li React, Next.js
+      li Sass/SCSS (БЭМ, PostCSS, CSS Modules), Tailwind
+      li TypeScript
+      li Vite
       li Юнит-тесты (Jest, Testing Library)
-      li git, GitHub
+      li git
 
     h2 Опыт работы
-    ul.timeline
+    ol.timeline
       li
         h3
           strong Фриланс
@@ -46,11 +46,12 @@ html(lang="ru")
         ul.inline
           li #[i.marked HTML]
           li #[i.marked Sass]
+          li #[i.marked PosCSS]
           li #[i.marked JavaScript]
-          li #[i.marked Gulp]
           li #[i.marked jQuery]
           li #[i.marked Flexbox]
-          li #[i.marked media-queries]
+          li #[i.marked Figma]
+          li #[i.marked Gulp]
           li #[i.marked PHP]
         p.
           Делал адаптивную верстку лендингов и многостраничных сайтов. #[br]
@@ -144,107 +145,125 @@ html(lang="ru")
             br
             br
             | Интегрировал виджет для регистрации на мероприятие
-
-      li
-        h3
-          strong William Reilly School, #[br.sm-only] Преподаватель английского
-          |  // Август 2019 — Ноябрь 2019
-        p
-          | Учил подростков и взрослых, а иногда и самих учителей
-
+      
       li
         h3
           strong Ведущий Frontend-разработчик
           |  // Март 2020 — Февраль 2022
         small
-          | По условиям договора я не могу указывать название компании или делиться скриншотами работ,
+          | По условиям договора я #[b не могу] указывать название компании или делиться скриншотами работ,
           br
-          | но я #[i могу] сказать, что это был #[i многостраничный сервис-калькулятор для работы с ценными бумагами].
+          | но я #[b могу] сказать, что это был многостраничный сервис-калькулятор для работы с ценными бумагами.
 
         p.no-margin Стек технологий проекта:
         ul.inline
           li #[i.marked React (v16.8+)]
+          li #[i.marked Redux]
           li #[i.marked #[a(href="https://ant.design") AntD]]
-          li #[i.marked React Context API]
           li #[i.marked TypeScript]
           li #[i.marked Sass/SCSS]
           li #[i.marked Jest], #[i.marked Testing Library]
+          li #[i.marked Webpack]
 
         p.
-          Писал клиенсткую часть на #[i.marked React]. #[br]
+          Писал клиентскую часть на #[i.marked React]. #[br]
           Связывал логику, выделял части интерфейса #[br]
           в изолированные и переиспользуемые компоненты. #[br]
-          Работал над оптимизацией кода, покрывал его #[i.marked unit-тестами].
+          Работал над оптимизацией кода, покрывал его #[i.marked юнит-тестами].
         p.
-          Использовал динамические графики #[a(href="https://charts.ant.design/en") antv] и #[a(href="https://www.anychart.com") anychart] #[br]
-          для визуализации статистики.
+          В качестве стейт-менеджера использовали #[i.marked Redux] в связке с #[i.marked React Context API].
+        //- p.
+        //-   Использовал динамические графики #[a(href="https://charts.ant.design/en") antv] и #[a(href="https://www.anychart.com") anychart] #[br]
+        //-   для визуализации статистики.
+        //- p.
+        //-   Также на проекте была команда бэкендеров. Они подготовили методы #[br]
+        //-   для авторизации и сохранения данных пользователя на странице, #[br]
+        //-   а также парсили данные о ценных бумагах с Московской биржи. #[br]
+        //-   Работал с #[i.marked REST API]. Читал документацию. Делал запросы на сервер #[br]
+        //-   и использовал полученные данные в расчетах.
+        p.
+          Работал с #[i.marked REST API]. Использовал #[i.marked #[a(href="https://github.com/axios/axios" target="_blank") axios]] для обмена данными с сервером.
         p.
           Учет работы велся в #[i.marked Trello] по принципу 
           #[br.sm-only] "одна карточка - одна задача". #[br]
-          Выполненные задачи обсуждал с проджект-менеджером и пушил в #[i.marked git].
-        p.
-          Также на проекте была команда бэкендеров. Они подготовили методы #[br]
-          для авторизации и сохранения данных пользователя на странице, #[br]
-          а также парсили данные о ценных бумагах с Московской биржи. #[br]
-          Работал с #[i.marked REST API]. Читал документацию. Делал запросы на сервер #[br]
-          и использовал полученные данные в расчетах.
+          Выполненные задачи показывал проджект-менеджеру и пушил в #[i.marked git].
         p.
           Впоследствии начал руководить небольшой командой фронтендеров. #[br]
           Ставил задачи. Менторил. Делал #[i.marked code-review].
+      
+      li
+        h3
+          strong Lead Frontend-разработчик, ИП Рачилов
+          |  // Май 2022 — настоящий день
+        ul.inline
+          li #[i.marked Next.js]
+          li #[i.marked TypeScript]
+          li #[i.marked CSS Modules]
+          li #[i.marked Sass/SCSS]
+          li #[i.marked #[a(href="https://tailwindcss.com/" target="_blank") Tailwind ]]
+          li #[i.marked Node.js]
+          li #[i.marked React Native]
+        p.
+          Разрабатывал и поддерживал приложения на #[i.marked Next.js], #[br]
+          Работал над #[i.marked #[a(href="https://t.me/Best4biz_bot" target="_blank") Telegram ботом для нетворкинга]],
+          писал мобильные приложения на #[i.marked React Native]. #[br]
+          Погружался в бэкенд и писал API на #[i.marked Node.js] и связывал их с #[i.marked MySQL]. #[br]
+          #[br]
+          Руководил отделом фронтенда. #[br]
+          Набирал команду, собеседовал и менторил новых разработчиков.
 
     h2 О себе
-    p
-      a.github.hide-print(
-        href="https://github.com/persiklover"
-        target="_blank"
-        title="GitHub"
+    a.github.hide-print(
+      href="https://github.com/persiklover"
+      target="_blank"
+      title="GitHub"
+    )
+      svg.ico(
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 16 16"
+        role="img"
+        aria-labelledby="GithubIconTitle"
       )
-        svg.ico(
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 16 16"
-          role="img"
-          aria-labelledby="GithubIconTitle"
+        title#GithubIconTitle Логотип GitHub
+        path(
+          stroke="none"
+          fill-rule="evenodd"
+          d="M8 0C3.6 0 0 3.6 0 8c0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1.1-2.7-1.1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6 0 1.3-.1 2-.1s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.3.6.8.6 1.5v2.2c0 .2.1.5.6.4C13.7 14.5 16 11.5 16 8c0-4.4-3.6-8-8-8z"
+          clip-rule="evenodd"
         )
-          title#GithubIconTitle Логотип GitHub
-          path(
-            stroke="none"
-            fill-rule="evenodd"
-            d="M8 0C3.6 0 0 3.6 0 8c0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1.1-2.7-1.1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6 0 1.3-.1 2-.1s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.3.6.8.6 1.5v2.2c0 .2.1.5.6.4C13.7 14.5 16 11.5 16 8c0-4.4-3.6-8-8-8z"
-            clip-rule="evenodd"
-          )
-        | // Мой GitHub 
+      | // Мой GitHub 
     p.
-      Работаю в VSCode. #[br]
-      Для работы с макетами использую Avocode и Figma. #[br]
-      Знаком с #[i.marked Markdown] и HTML-шаблонизатором #[i.marked Pug]. Знаю основы #[i.marked PHP]. #[br]
-    p.
-      Разбираюсь в адаптивной и кроссбразуерной верстке. #[br]
-      Люблю семантику и доступные интерфейсы. #[br]
-      Знаю, что такое #[code aria-*] атрибуты и зачем они нужны.
-    p.
+      В совершенстве знаю #[i.marked JavaScript (ES6+)]. #[br]
       Пишу на #[i.marked TypeScript] везде, где это возможно. #[br]
       Документирую код с помощью #[i.marked JSDoc]. Дебажу в #[i.marked Chrome Devtools].
     p.
-      Умею настраивать конфиги и писать их с нуля. #[br]
-      Дружу с #[i.marked Webpack], #[i.marked Gulp], #[i.marked Babel], #[i.marked eslint].#[br]
+      Работаю с Figma и PSD макетами. #[br]
+      Разбираюсь в адаптивной и кроссбразуерной верстке. #[br]
+      Люблю семантику. Знаю, что такое #[code aria-*] атрибуты и зачем они нужны.
+    //- p.
+    //-   В собственных проектах использую #[i.marked CSS Modules]. #[br]
+    //-   Работал со #[i.marked Styled Components].
     p.
-      Регулярно пользуюсь #[i.marked Trello] и #[i.marked git]'ом по работе и не только. #[br]
+      Умею настраивать конфиги и писать их с нуля. #[br]
+      Дружу с #[i.marked #[a(href="https://vitejs.dev" target="_blank") Vite]], #[i.marked Webpack], #[i.marked Gulp], #[i.marked Babel], #[i.marked eslint].#[br]
+    p.
+      Регулярно пользуюсь #[i.marked Trello]/#[i.marked Jira] и #[i.marked git]'ом по работе и не только. #[br]
     p.
       В свободное время люблю делать игры. #[br]
-      Сейчас, например, активно осваиваю движок Godot.
+      Сейчас, например, активно осваиваю движок #[a(href="https://godotengine.org/" target="_blank") Godot].
 
     h2 Языки
     ul
       li Русский — Родной
       li Английский — C1, без проблем читаю документацию, #[br.sm-only] свободно общаюсь с носителями
 
-    h2 Контакты
-    address
-      p Быстрее всего я отвечаю в Telegram
-      a(href="https://t.me/persiklover" target="_blank") t.me/persiklover
+    //- h2 Контакты
+    //- address
+    //-   p Быстрее всего я отвечаю в Telegram
+    //-   a(href="https://t.me/persiklover" target="_blank") t.me/persiklover
 
-      p Но мне можно написать и на рабочую почту
-      a(href="mailto:dannniska@gmail.com" target="_blank") dannniska@gmail.com
+    //-   p Но мне можно написать и на рабочую почту
+    //-   a(href="mailto:dannniska@gmail.com" target="_blank") dannniska@gmail.com
 
     p.incredible-absolutely-phenomenal.hide-print.
       Это резюме можно распечатать через #[kbd Ctrl] + #[kbd P]
