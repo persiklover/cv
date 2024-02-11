@@ -6,10 +6,10 @@
 html {
   --outline-width: .4rem;
 
-  font-size: .520834vw;
+  font-size: .520834vw; // 10px on 1920px
   
   @include sm {
-    font-size: 1.26595vw;
+    font-size: 1.302083vw; // 10px on 768px
   }
 }
 
@@ -268,11 +268,10 @@ ol {
     margin-bottom: .7em;
 
     display: inline-flex;
-    list-style: none;
+    flex-wrap: wrap;
+    gap: .75ch;
 
-    > * + * {
-      margin-left: .75ch;
-    }
+    list-style: none;
 
     li {
       &::after {

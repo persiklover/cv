@@ -20,7 +20,7 @@ html {
 }
 @media screen and (max-width: 768px) {
   html {
-    font-size: 1.26595vw;
+    font-size: 1.302083vw;
   }
 }
 
@@ -241,11 +241,9 @@ ol.inline {
   margin-top: -0.4em;
   margin-bottom: 0.7em;
   display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.75ch;
   list-style: none;
-}
-ul.inline > * + *,
-ol.inline > * + * {
-  margin-left: 0.75ch;
 }
 ul.inline li::after,
 ol.inline li::after {
