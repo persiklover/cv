@@ -4,7 +4,7 @@
 @import url(./reset.css);
 
 html {
-  --outline-width: .4rem;
+  --outline-width: .3rem;
 
   font-size: .520834vw; // 10px on 1920px
   
@@ -37,12 +37,15 @@ body {
   // border-radius: 50%;
 
   @media print {
+    position: absolute;
+    right: 0;
+    top:   0;
     height: 13.5ch;
   }
 }
 
 .intro {
-  position: relative;
+  // position: relative;
   display: inline-block;
 
   strong {
