@@ -28,9 +28,10 @@ body {
   position: relative;
   font-family: "Hack", monospace;
   font-size: 1.8rem;
-  line-height: 1.25em;
+  line-height: 1.3em;
   letter-spacing: 0.005em;
   margin: 1.25em;
+  -webkit-print-color-adjust: exact !important;
 }
 @media print {
   body {
@@ -90,7 +91,7 @@ i.marked {
   border-radius: 0.25em;
   padding: 0.2em 0.5em 0.2em;
   font-family: inherit;
-  font-size: 0.85em;
+  font-size: 0.9em;
   color: #333;
   font-style: normal;
   font-weight: 700;
@@ -214,6 +215,7 @@ h3 strong {
   font-size: 1.2em;
   font-weight: bold;
 }
+
 h3 + small,
 h4 + small {
   display: block;
@@ -232,7 +234,6 @@ ul.timeline,
 ol.timeline {
   display: flex;
   flex-direction: column;
-  flex-direction: column-reverse;
   list-style: decimal-leading-zero;
   padding: 0;
   padding-left: 2em;
@@ -317,6 +318,8 @@ a:focus {
   display: flex;
   align-items: flex-start;
   gap: 1.75em;
+  width: 17em;
+  aspect-ratio: 1.7777;
 }
 @media screen and (max-width: 768px) {
   .project figure {
@@ -345,7 +348,13 @@ a:focus {
   box-shadow: 0 0 0 var(--outline-width) rgba(0, 123, 193, 0.25);
 }
 .project figure img {
-  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .project figure figcaption {
   display: inline-block;
